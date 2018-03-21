@@ -1,0 +1,9 @@
+.select2-container--open {
+    z-index: 9999999 !important;
+}
+
+textarea {
+    width: 50%;
+    height: 100px;
+    vertical-align: top;
+}

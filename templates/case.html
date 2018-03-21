@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block navbar-breadcrumb %}用例{% endblock %}
+
+{% block title %}用例{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="/static/js/case.js"></script>
+    <script type="text/javascript">
+        var suiteid = {{ suiteid }};
+        var modularid = {{ modularid }};
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="title">查询项</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form class="form-inline">
+                        <table class="cxxtable">
+                            <tr>
+                                <th>
+                                    <div class="form-group" style="padding: 6px 15px">
+                                        <label for="casename">用例集名称：</label>
+                                        <input type="text" class="form-control" maxlength="20" id="casename"
+                                               placeholder="请输入用例集名称，模糊查询">
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group" style="padding: 6px 15px">
+                                        <label for="casename">用例名称：</label>
+                                        <input type="text" class="form-control" maxlength="20" id="casename"
+                                               placeholder="请输入用例名称，模糊查询">
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group" style="padding: 6px 15px">
+                                        <label for="casemodular"> 所 属 模 块 ：</label>
+                                        <input type="email" class="form-control" id="casemodular" maxlength="100"
+                                               placeholder="请输入模块名称，模糊查询">
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+                        <button type="button" class="btn btn-success" id="select">查询</button>
+                        <button type="button" class="btn btn-primary" id="clear">清空</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="title">操作项</div>
+                        <button type="button" class="btn btn-default" id="default">Default</button>
+                        <button type="button" class="btn btn-default" id="related_cases">相关用例集</button>
+                        <button type="button" class="btn btn-default" id="details">详情</button>
+                        <button type="button" class="btn btn-default" id="related_reports">相关报告</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="datatable table table-striped display" cellspacing="0" width="100%" id="case_table">
+                        <thead>
+                        <tr>
+                            <th>用例编号</th>
+                            <th>用例名称</th>
+                            <th>所属模块</th>
+                            <th>用例Sheet</th>
+                            <th>备注</th>
+                            <th>创建人</th>
+                            <th>创建时间</th>
+                            <th>最后更新时间</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>用例编号</th>
+                            <th>用例名称</th>
+                            <th>所属模块</th>
+                            <th>用例Sheet</th>
+                            <th>备注</th>
+                            <th>创建人</th>
+                            <th>创建时间</th>
+                            <th>最后更新时间</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
